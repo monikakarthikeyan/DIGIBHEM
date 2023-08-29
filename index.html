@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <div class="square">
+            <div class="square1"></div>
+            <div class="square2"></div>
+            <div class="square3"></div>
+            <div class="square4"></div>
+        </div>
+        <div class="big-square">
+            <div class="bg-images">
+                <img class="img" src="room-4768554_640.jpg"/>
+            </div>
+           <div id="successMsgDiv" style="display: none;" class="flex-col">
+                <p>Thank you for booking...</p>
+                <input type="button" class="button" onclick="bookAgain()" value="Book Again"></input>
+           </div>
+            <form id="formDiv" class="formDiv" onsubmit="return onBookHotel()" >
+            <div class="content"> 
+                    <div class="content1">
+                        <p class="heading">Hotel Booking Registration Form</p>
+                        <div class="section1">
+                            <h4>Customer info</h4>
+                            <div class="flex">
+                                <label>Name:</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="flex">        
+                                <label>Check-in date:</label>
+                                <input type="date" required>
+                            </div>  
+                            <div class="flex">
+                                <label>Total No. of Days:</label>
+                                <input id="days" type="number" required onchange="calculate()">
+                            </div>  
+                            <div class="flex">
+                                <label>Total No. of persons:</label>
+                                <input id="persons" type="number" required onchange="calculate()"> 
+                            </div> 
+                        </div>
+                        <div class="section2">
+                            <h4>Room information and Amenities</h4>
+                            <div>
+                                <input onclick="delux()" type="radio" value="delux" name="roomrate">Delux room</input>
+                                <input onclick="suite()" type="radio" value="suite" name="roomrate">Suite room</input>
+                            </div>
+                            <div>
+                                <input onclick="amenitiesCost()" id="roomCheckbox" type="checkbox" value="a/croom" name="amenities">A/C room
+                                <input onclick="amenitiesCost()" id="lockerCheckbox" type="checkbox" value="locker" name="amenities">Locker
+                            </div>
+                        </div>    
+                        <div class="section3">
+                            <div class="add-info">
+                                <p>Upto 2 people: No changes in cost </p>
+                                <p>Per day cost for extra person : 1000/-</p>
+                            </div>  
+                        </div>
+
+                    </div>    
+                    <div class="content2">
+                        <div class="section4">
+                            <div class="flex">
+                                <label>Advance Amount:</label>
+                                <input id="advanceAmount" type="number" required onchange="calculate()" onkeydown="calculate()">
+                            </div>  
+                        </div> 
+                        <div class="section5">
+                            <div class="flex">
+                                <label>Balance Amount:</label>
+                                <input id="balanceAmount" type="number">
+                            </div>
+                        </div>
+                        <div class="section6">
+                            <h4>Total Cost</h4>
+                                <div class="flex">
+                                    <label>Total Room cost:</label>
+                                    <input id="roomCost" type="number">
+                                </div>
+                                <div class="flex">  
+                                    <label>Total Amenities Cost:</label>
+                                    <input id="amenities" type="number">
+                                </div> 
+                                <hr> 
+                                <div class="flex"> 
+                                    <label>Total Cost: </label>
+                                    <div class="flex-col">
+                                        <input id="totalCost" type="number">
+                                        <span id="summary"></span>
+                                    </div>
+                                </div>       
+                        </div>
+                        <div class="section7">
+                            <h4>Room Rate</h4>
+                            <div class="add-info">
+                                <p>Delux Room = 2500/-</p>
+                                <p>Suite Room = 4000/-</p>
+                                <p>A/C Room = 1000/-</p>
+                                <p>Locker = 300/-</p>
+                            </div> 
+                        </div> 
+                        <div class="section8">
+                            <input class="button" onclick="register()" type="submit" value="Register"></input>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>  
+    <script src="app.js"></script>   
+</body>
+</html>
