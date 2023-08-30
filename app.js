@@ -29,12 +29,7 @@ function amenitiesCost(){
    calculate();
 }
 
-// function calcTotal(){
-//     let roomCost= document.getElementById("roomCost").value;
-//     let amenities= document.getElementById("amenities").value;
-//     let totalCost = parseInt(roomCost)+parseInt(amenities);
-//     document.getElementById("totalCost").value = totalCost;
-// }
+
 function advanceAmt(){
     let advAmt= document.getElementById('advanceAmount');
 }
@@ -80,10 +75,6 @@ function onBookHotel(){
  return false;
 }
 
-function bookAgain() {
-  document.getElementById("successMsgDiv").style.display = 'none';
-  document.getElementById("formDiv").style.display = 'block';
 
-}
 
 
